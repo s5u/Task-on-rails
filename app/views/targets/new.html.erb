@@ -1,0 +1,8 @@
+<div>
+    <%= form_tag('/targets', method: :post) do %>
+    <h3>タスクを入力する</h3>
+    <input placeholder="達成したいタスク名を入力してください" type="text" name="name">
+    <textarea placeholder="説明を入力してください" name="text" cols="30" rows="10"></textarea>
+    <input value="SENT" type="submit">
+    <% end %>
+</div>
