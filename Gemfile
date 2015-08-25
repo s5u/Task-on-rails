@@ -45,10 +45,10 @@ group :development, :test do
   gem 'devise'
   gem 'paperclip'
   gem 'kaminari'
-  gem 'therubyracer'
-  gem 'twitter-bootstrap-rails'
-  gem 'bootstrap-material-design', '0.1.4'
-  gem 'compass-rails'
-  gem 'sprockets'
+  # gem 'therubyracer'
+  # gem 'twitter-bootstrap-rails'
+  # gem 'bootstrap-material-design', '0.1.4'
+  # gem 'compass-rails'
+  # gem 'sprockets'
 end
 
