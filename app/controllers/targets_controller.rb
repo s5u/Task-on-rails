@@ -5,7 +5,7 @@ class TargetsController < ApplicationController
   end
 
   def new
-    
+    @target = Target.new
   end
 
   def create
@@ -14,6 +14,6 @@ class TargetsController < ApplicationController
 
   private
   def target_params
-    params.permit(:name, :text)
+    params.require(:target).permit(:name, :text)
   end
 end

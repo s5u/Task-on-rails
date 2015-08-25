@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'targets' => 'targets#index'
-  get 'targets/new' => 'targets#new'
-  post 'targets' => 'targets#create'
+  resources :targets
+  # get 'targets' => 'targets#index'
+  # get 'targets/new' => 'targets#new'
+  # post 'targets' => 'targets#create'
   # root to: "tasks#index"
 end
