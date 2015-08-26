@@ -8,6 +8,12 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def destroy
+    @task = Task.where(target_id: params[:target_id] && id: params[:id])
+    binding.pry
+    @task.destroy
+  end
+
   def create
     @target  = Target.find(params[:target_id])
     @task = Task.create(task_params)

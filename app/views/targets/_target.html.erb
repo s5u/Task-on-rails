@@ -4,4 +4,12 @@
 <h3>・説明</h3>
 <p><%= target.text %></p>
 <%= link_to "ターゲット達成のためのタスク一覧", target_tasks_path(target.id) %>
+<div>
+  <ul>
+    <li>
+    <%= link_to "削除", target_path(target.id), method: :delete %>
+    </li>
+    <li><%= link_to "編集", edit_target_path(target.id) %></li>
+  </ul>
+</div>
 </div>
