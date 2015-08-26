@@ -9,9 +9,18 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.where(target_id: params[:target_id] && id: params[:id])
-    binding.pry
+    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
     @task.destroy
+    redirect_to action: :index
+  end
+
+  def edit
+    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
+  end
+
+  def update
+    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
+    @task.update(task_params)
   end
 
   def create

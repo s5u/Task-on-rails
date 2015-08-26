@@ -14,6 +14,7 @@ class TargetsController < ApplicationController
   def destroy
     @target = Target.find(params[:id])
     @target.destroy
+    redirect_to action: :index
   end
 
   def edit

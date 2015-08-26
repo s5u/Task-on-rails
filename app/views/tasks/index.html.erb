@@ -1,5 +1,7 @@
 <div>
   <h2><%= @target.name %></h2>
+  <div><%= link_to "タスクを追加登録する", new_target_task_path(@target.id) %></div>
+  <div><%= link_to "ターゲット一覧へ戻る", targets_path %></div>
   <h3>タスク一覧</h3>
 </div>
 <div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>

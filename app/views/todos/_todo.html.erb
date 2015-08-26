@@ -3,4 +3,12 @@
 <p><%= todo.name %></p>
 <h3>・説明</h3>
 <p><%= todo.text %></p>
+<div>
+  <ul>
+    <li>
+    <%= link_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
+    </li>
+    <li><%= link_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id) %></li>
+  </ul>
+</div>
 </div>
