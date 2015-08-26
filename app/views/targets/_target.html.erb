@@ -1,2 +1,7 @@
+<div style="background-color: #ffebcd">
+<h3>・ターゲット</h3>
 <p><%= target.name %></p>
+<h3>・説明</h3>
 <p><%= target.text %></p>
+<%= link_to "ターゲット達成のためのタスク一覧", target_tasks_path(target.id) %>
+</div>

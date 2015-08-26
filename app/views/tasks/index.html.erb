@@ -1,1 +1,5 @@
-<div><%= render :partial => "target", :collection => @targets %></div>
+<div>
+  <h2><%= @target.name %></h2>
+  <h3>タスク一覧</h3>
+</div>
+<div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>

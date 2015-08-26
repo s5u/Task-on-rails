@@ -1,1 +1,4 @@
-<div><%= render :partial => "target", :collection => @targets %></div>
+<div>
+<%= link_to "ターゲットを登録する", new_target_path %>
+</div>
+<div><%= render :partial => "target", :collection => @targets.order(created_at: :DESC) %></div>

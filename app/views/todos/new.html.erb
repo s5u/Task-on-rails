@@ -1,6 +1,6 @@
 <div>
-    <%= form_for @target do |f| %>
-      <%= f.text_field :name, placeholder: 'ターゲットを入力してください' %>
+    <%= form_for @todo, :url => {:action => 'create'} do |f| %>
+      <%= f.text_field :name, placeholder: 'todoを入力してください' %>
       <%= f.text_area :text, placeholder: '説明を入力してください',  cols: "30", rows: "10" %>
       <%= f.submit "登録" %>
     <% end %>

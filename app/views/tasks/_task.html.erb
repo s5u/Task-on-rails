@@ -1,0 +1,7 @@
+<div style="background-color: #00ced1">
+<h3>・タスク</h3>
+<p><%= task.name %></p>
+<h3>・説明</h3>
+<p><%= task.text %></p>
+<%= link_to "タスク達成のためのtodo一覧", target_task_todos_path(task.target_id,task.id) %>
+</div>

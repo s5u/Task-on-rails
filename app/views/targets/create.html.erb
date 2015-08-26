@@ -1,6 +1,7 @@
 <div>
   <div>
-    <h3>タスク登録が完了しました。</h3>
-    <a href="/targets">一覧に戻る</a>
+    <h3>ターゲットの登録が完了しました。</h3>
+    <%= link_to "一覧に戻る", targets_path %>
+    <%= link_to "タスクを入力する", new_target_task_path(@target.id) %>
   </div>
 </div>
