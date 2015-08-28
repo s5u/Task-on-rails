@@ -21,6 +21,7 @@ class TodosController < ApplicationController
   def update
     @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
     @todo.update(todo_params)
+    redirect_to action: :index
   end
 
   def create

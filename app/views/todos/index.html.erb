@@ -1,8 +1,14 @@
-<div>
-  <h2><%= @task.name %></h2>
-  <div><%= link_to "todoを追加登録する", new_target_task_todo_path(@task.target_id, @task.id) %></div>
-  <div><%= link_to "タスク一覧へ戻る", target_tasks_path %></div>
-  <div><%= link_to "ターゲット一覧へ戻る", targets_path %></div>
-  <h3>todo一覧</h3>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3 col-md-3 text-center">
+    <h2 class="targetname"><%= link_to "#{@task.target.name}", targets_path %></h2>
+    <h2 class="taskname"><%= link_to "#{@task.name}", target_tasks_path %></h2>
+    <button type="button" class="btn btn-default td-add-button"><div><%= link_to "Todoを追加する", new_target_task_todo_path(@task.target_id, @task.id) %></div></button>
+    <div></div>
+  </div>
+  <div class="col-sm-9 col-md-9 tsk-fld">
+    <div><%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %></div>
+    </div>
+  </div>
+ </div>
 </div>
-<div><%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %></div>

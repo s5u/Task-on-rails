@@ -1,14 +1,8 @@
-<div style="background-color: #ffa07a">
-<h3>・todo</h3>
-<p><%= todo.name %></p>
-<h3>・説明</h3>
-<p><%= todo.text %></p>
-<div>
-  <ul>
-    <li>
-    <%= link_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
-    </li>
-    <li><%= link_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id) %></li>
-  </ul>
-</div>
+<div class="todo">
+  <div class= "todo-h4"><h4><%= todo.name %></h4></div>
+  <div class= "todo-p"><p><%= todo.text %></p></div>
+  <div class="btn-group button-position" role="group" aria-label="編集・削除">
+  <button type="button" class="btn btn-default td-button"><%= link_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id) %></button>
+  <button type="button" class="btn btn-default td-button"><%= link_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %></button>
+  </div>
 </div>

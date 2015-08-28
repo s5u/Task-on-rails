@@ -1,4 +1,10 @@
-<div>
-<%= link_to "ターゲットを登録する", new_target_path %>
+
+<div class="container">
+  <div class="row">
+  <div><%= render :partial => "target", :collection => @targets %></div>
+  </div>
 </div>
-<div><%= render :partial => "target", :collection => @targets.order(created_at: :DESC) %></div>
+
+<div class="container">
+  <%= paginate(@targets) %>
+</div>

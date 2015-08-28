@@ -1,15 +1,9 @@
-<div style="background-color: #ffebcd">
-<h3>・ターゲット</h3>
-<p><%= target.name %></p>
-<h3>・説明</h3>
-<p><%= target.text %></p>
-<%= link_to "ターゲット達成のためのタスク一覧", target_tasks_path(target.id) %>
-<div>
-  <ul>
-    <li>
-    <%= link_to "削除", target_path(target.id), method: :delete %>
-    </li>
-    <li><%= link_to "編集", edit_target_path(target.id) %></li>
-  </ul>
-</div>
+<div class="col-sm-6 col-md-4 target">
+    <div class= "target-h4"><h4><%= target.name %></h4></div>
+    <div class= "target-p"><p><%= target.text %></p></div>
+    <div class="btn-group button-position" role="group" aria-label="Tasklist・編集・削除">
+    <button type="button" class="btn btn-default trgt-list-button"><%= link_to "達成に必要なTask", target_tasks_path(target.id) %></button>
+    <button type="button" class="btn btn-default trgt-button"><%= link_to "編集", edit_target_path(target.id) %></button>
+    <button type="button" class="btn btn-default trgt-button"><%= link_to "削除", target_path(target.id), method: :delete %></button>
+    </div>
 </div>

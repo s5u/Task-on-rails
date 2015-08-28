@@ -1,3 +1,101 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.task {
+  width: 40%;
+  height: 300px;
+  background-color: #ffa500;
+  opacity: 0.8;
+  border-radius: 10px;
+  padding: 15px 10px;
+  margin: 30px auto;
+  /* border: 1px solid #808080; */
+  position: relative;
+  -webkit-box-shadow: 3px 3px 10px #777;
+  -moz-box-shadow: 3px 3px 10px #777;
+  box-shadow: 3px 3px 10px #777;
+  }
+
+.task-form {
+  float: right;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  -webkit-box-shadow: 3px 3px 10px #777;
+  -moz-box-shadow: 3px 3px 10px #777;
+  box-shadow: 3px 3px 10px #777;
+}
+
+.tsk-dscrptn {
+  width: 50%;
+}
+
+.tsk-dscrptn p {
+  color: #ffffff;
+  background-color: #00bfff;
+  font-size:  40px;
+  padding: 15px;
+  margin-bottom: 150px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.tsk-dscrptn img {
+  margin-bottom: 15px;
+}
+
+.tsk-fld {
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.tsk-add-button {
+  opacity: 1;
+}
+.tsk-list-button {
+  opacity: 1;
+  width: 60%;
+}
+
+.tsk-button {
+  opacity: 1;
+  width: 20%;
+}
+
+.targetname a {
+  color: #000000;
+}
+
+.targetname a:hover{
+  color: #00bfff;
+}
+
+.task-h4 {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  height: 15%;
+  padding: 1px;
+  border: 0.5px solid #808080;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  }
+
+.task-p {
+  background-color: #ffffff;
+  border-radius: 7px;
+  height: 60%;
+  padding: 5px;
+  border: 0.5px solid #808080;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  right: 10px;
+  }

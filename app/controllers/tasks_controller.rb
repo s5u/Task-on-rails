@@ -21,6 +21,7 @@ class TasksController < ApplicationController
   def update
     @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
     @task.update(task_params)
+    redirect_to action: :index
   end
 
   def create

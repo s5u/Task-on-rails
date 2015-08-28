@@ -1,7 +1,13 @@
-<div>
-  <h2><%= @target.name %></h2>
-  <div><%= link_to "タスクを追加登録する", new_target_task_path(@target.id) %></div>
-  <div><%= link_to "ターゲット一覧へ戻る", targets_path %></div>
-  <h3>タスク一覧</h3>
+<div class="container">
+ <div class="row">
+  <div class="col-sm-3 col-md-3 text-center">
+    <h2 class="targetname"><%= link_to "#{@target.name}", targets_path %></h2>
+    <button type="button" class="btn btn-default tsk-add-button"><%= link_to "Taskを追加する", new_target_task_path(@target.id) %></button>
+    <div></div>
+  </div>
+  <div class="col-sm-9 col-md-9 tsk-fld">
+    <div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>
+    </div>
+  </div>
+ </div>
 </div>
-<div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>

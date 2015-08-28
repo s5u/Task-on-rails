@@ -1,0 +1,16 @@
+body {
+  background-color: #eff0f1;
+  margin-top: 80px;
+  font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
+}
+
+.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: block;
+}

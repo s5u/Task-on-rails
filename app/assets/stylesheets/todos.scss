@@ -1,3 +1,69 @@
 // Place all the styles related to the todos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.todo {
+  width: 40%;
+  height: 300px;
+  background-color: #00ff00;
+  opacity: 0.8;
+  border-radius: 10px;
+  padding: 15px 10px;
+  margin: 30px auto;
+  /* border: 1px solid #808080; */
+  position: relative;
+  -webkit-box-shadow: 3px 3px 10px #777;
+  -moz-box-shadow: 3px 3px 10px #777;
+  box-shadow: 3px 3px 10px #777;
+  }
+
+.td-fld {
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 10px;
+  float: right;
+  margin-bottom: 20px;
+}
+
+.td-add-button {
+  opacity: 1;
+}
+
+.td-button {
+  opacity: 1;
+  width: 50%;
+}
+
+.taskname a {
+  color: #000000;
+}
+
+.taskname a:hover{
+  color: #ffa500;
+}
+
+.todo-h4 {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  height: 15%;
+  padding: 1px;
+  border: 0.5px solid #808080;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  left: 10px;
+  }
+
+.todo-p {
+  background-color: #ffffff;
+  border-radius: 7px;
+  height: 60%;
+  padding: 5px;
+  border: 0.5px solid #808080;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 70px;
+  left: 10px;
+  right: 10px;
+  }

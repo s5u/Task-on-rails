@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
   def index
-    @targets = Target.all
+    @targets = Target.order(created_at: :DESC).page(params[:page]).per(6)
   end
 
   def new
@@ -24,6 +24,7 @@ class TargetsController < ApplicationController
   def update
     @target = Target.find(params[:id])
     @target.update(target_params)
+    redirect_to action: :index
   end
 
   private
