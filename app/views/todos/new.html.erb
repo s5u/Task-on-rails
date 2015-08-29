@@ -1,7 +1,21 @@
-<div>
-    <%= form_for @todo, :url => {:action => 'create'} do |f| %>
-      <%= f.text_field :name, placeholder: 'todoを入力してください' %>
-      <%= f.text_area :text, placeholder: '説明を入力してください',  cols: "30", rows: "10" %>
-      <%= f.submit "登録" %>
-    <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 td-dscrptn">
+    <div><p>Todoを入力してください</p></div>
+      <div><img src="/assets/todo.jpg" alt="Todo"></div>
+    </div>
+    <div class="col-sm-5 col-md-5 todo-form">
+     <%= form_for @todo, :url => {:action => 'create'} do |f| %>
+        <div>
+          <%= f.text_field :name, placeholder: 'Todo名' %>
+        </div>
+        <div>
+          <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>
+        </div>
+        <div>
+          <%= f.submit "登録" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
