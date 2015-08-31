@@ -7,7 +7,7 @@
     <div class="col-sm-5 col-md-5 target-form">
       <%= form_for @target do |f| %>
         <div>
-          <%= f.text_field :name, placeholder: 'Target名' %>
+          <%= f.text_field :name, placeholder: 'Target名', maxlength: '200' %>
         </div>
         <div>
           <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>

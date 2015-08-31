@@ -8,8 +8,7 @@
   opacity: 0.8;
   border-radius: 10px;
   padding: 15px 10px;
-  margin: 30px auto;
-  /* border: 1px solid #808080; */
+  margin: 15px auto;
   position: relative;
   -webkit-box-shadow: 3px 3px 10px #777;
   -moz-box-shadow: 3px 3px 10px #777;
@@ -52,21 +51,26 @@
   margin-bottom: 20px;
 }
 
-.td-add-button {
-  opacity: 1;
-}
-
 .td-button {
   opacity: 1;
   width: 50%;
 }
 
+.taskname {
+  margin-bottom: 20px;
+  padding: 5px;
+  background-color: #ffa500;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .taskname a {
-  color: #000000;
+  color: #fff;
 }
 
 .taskname a:hover{
-  color: #ffa500;
+  color: #808080;
+  opacity: 0.8;
 }
 
 .todo-h4 {
@@ -95,3 +99,33 @@
   left: 10px;
   right: 10px;
   }
+
+.todo-arrow {
+  width:  7.5%;
+  margin: 0 auto;
+}
+
+.todo-otsu {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.todo-button-position {
+  position: absolute;
+  top: 260px;
+  right: 10px;
+}
+
+.todo-edit-button {
+  float: left;
+  margin-right: 2%;
+  width: 49%;
+}
+
+.todo-delete-button {
+  float: left;
+  width: 49%;
+}

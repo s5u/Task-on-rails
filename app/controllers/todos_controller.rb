@@ -37,4 +37,8 @@ class TodosController < ApplicationController
   def todo_params
     params.require(:todo).permit(:name, :text)
   end
+
+  # def todo_checkbox_params
+  #   params.require(:todo).permit(:archieve)
+  # end
 end

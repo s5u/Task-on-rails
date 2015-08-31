@@ -9,8 +9,58 @@ body {
   margin-right: auto;
 }
 
+div {
+  overflow: scroll;
+  word-break: break-all;
+}
+
+
 .clearfix:after {
   content: "";
   clear: both;
   display: block;
+}
+
+.to-input {
+  text-align: center;
+  margin: 10px auto;
+}
+
+
+.to-list {
+  text-align: center;
+  margin: 10px auto;
+}
+
+.created {
+  margin-top: 15px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.list-button {
+  float: left;
+  margin-right: 1%;
+  margin-left: 8%;
+  width: 50%;
+}
+
+.edit-button {
+  float: left;
+  margin-right: 1%;
+  width: 20%;
+}
+
+.delete-button {
+  float: left;
+  width: 20%;
+}
+
+.button-position {
+  position: absolute;
+  top: 260px;
+  right: 10px;
+  left: 10px;
 }

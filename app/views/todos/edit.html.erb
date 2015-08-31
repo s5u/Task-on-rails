@@ -1,10 +1,3 @@
-<!-- <div>
-    <%= form_for @todo, :url => {:action => 'update'} do |f| %>
-      <%= f.text_field :name, placeholder: 'タスク名を入力してください' %>
-      <%= f.text_area :text, placeholder: '説明を入力してください',  cols: "30", rows: "10" %>
-      <%= f.submit "登録" %>
-    <% end %>
-</div> -->
 <div class="container">
   <div class="row">
     <div class="col-sm-8 col-md-8 td-dscrptn">
@@ -14,7 +7,7 @@
     <div class="col-sm-5 col-md-5 todo-form">
      <%= form_for @todo, :url => {:action => 'update'} do |f| %>
         <div>
-          <%= f.text_field :name, placeholder: 'Todo名' %>
+          <%= f.text_field :name, placeholder: 'Todo名', maxlength: '200' %>
         </div>
         <div>
           <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>

@@ -1,7 +1,19 @@
-<div>
-  <div>
-    <h3>Taskの登録が完了しました。</h3>
-    <%= link_to "Task一覧に戻る", target_tasks_path %>
-    <%= link_to "todoを入力する", new_target_task_todo_path(@task.target_id, @task.id) %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-12">
+      <h2 class="created">Taskを登録しました。</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6 col-md-6">
+      <div class="to-input">
+        <%= button_to "Todoを入力する", new_target_task_todo_path(@task.target_id, @task.id), method: :get %>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6">
+      <div class="to-list">
+        <%= button_to "Task一覧に戻る", target_tasks_path, method: :get %>
+      </div>
+    </div>
   </div>
 </div>

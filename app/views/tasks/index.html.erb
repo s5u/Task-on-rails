@@ -1,12 +1,14 @@
 <div class="container">
  <div class="row">
-  <div class="col-sm-3 col-md-3 text-center">
+  <div class="col-xs-12 col-md-3 text-center">
     <h2 class="targetname"><%= link_to "#{@target.name}", targets_path %></h2>
-    <button type="button" class="btn btn-default tsk-add-button"><%= link_to "Taskを追加する", new_target_task_path(@target.id) %></button>
-    <div></div>
+    <div>
+      <%= button_to "Taskを追加する", new_target_task_path(@target.id), method: :get %>
+    </div>
   </div>
-  <div class="col-sm-9 col-md-9 tsk-fld">
+  <div class="col-xs-12 col-md-9 tsk-fld">
     <div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>
+    <h3 class="task-otsu">「<%= @target.name %>」達成。お疲れさまです。</h3>
     </div>
   </div>
  </div>

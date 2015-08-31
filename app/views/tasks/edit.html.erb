@@ -7,7 +7,7 @@
     <div class="col-sm-5 col-md-5 task-form">
       <%= form_for @task, :url => {:action => 'update'} do |f| %>
         <div>
-          <%= f.text_field :name, placeholder: 'Task名' %>
+          <%= f.text_field :name, placeholder: 'Task名', maxlength: '200' %>
         </div>
         <div>
           <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>

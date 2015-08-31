@@ -1,8 +1,13 @@
 <div class="todo">
   <div class= "todo-h4"><h4><%= todo.name %></h4></div>
   <div class= "todo-p"><p><%= todo.text %></p></div>
-  <div class="btn-group button-position" role="group" aria-label="編集・削除">
-  <button type="button" class="btn btn-default td-button"><%= link_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id) %></button>
-  <button type="button" class="btn btn-default td-button"><%= link_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %></button>
+  <div class="todo-button-position">
+   <div class="todo-edit-button">
+    <%= button_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :get %>
+    </div>
+   <div class="todo-delete-button">
+     <%= button_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
+   </div>
   </div>
 </div>
+<%= render 'todos/arrow' %>
