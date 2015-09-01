@@ -1,6 +1,6 @@
 class TargetsController < ApplicationController
   def index
-    @targets = Target.order(created_at: :DESC).page(params[:page]).per(6)
+    @targets = Target.order(created_at: :DESC).where(user_id: current_user.id).page(params[:page]).per(6)
   end
 
   def new
@@ -8,7 +8,7 @@ class TargetsController < ApplicationController
   end
 
   def create
-    @target = Target.create(target_params)
+    @target = Target.create(name: target_params[:name],text: target_params[:text],user_id: current_user.id)
   end
 
   def destroy

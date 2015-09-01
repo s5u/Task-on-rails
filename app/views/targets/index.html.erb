@@ -1,10 +1,18 @@
-
-<div class="container">
-  <div class="row">
-    <div><%= render :partial => "target", :collection => @targets %></div>
+<% unless current_user.full_profile? %>
+  <header class="col-lg-12">
+    <h2>プロフィールのすべての項目の登録をお願いします</h2>
+    <div class="to-prof-edit">
+      <%= button_to 'プロフィールを登録する', edit_user_path(current_user.id), method: :get %>
+    </div>
+  </header>
+<% else %>
+  <div class="container">
+    <div class="row">
+      <div><%= render :partial => "target", :collection => @targets %></div>
+    </div>
   </div>
-</div>
 
-<div class="container">
-  <%= paginate(@targets) %>
-</div>
+  <div class="container">
+    <%= paginate(@targets) %>
+  </div>
+<% end %>

@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     @target = Target.find(params[:target_id])
-    @tasks = Task.where(target_id: params[:target_id])
+    @tasks = Task.where(target_id: params[:target_id]).where(user_id: current_user.id)
   end
 
   def new
@@ -26,7 +26,7 @@ class TasksController < ApplicationController
 
   def create
     @target  = Target.find(params[:target_id])
-    @task = Task.create(task_params)
+    @task = Task.create(name: task_params[:name],text: task_params[:text],user_id: current_user.id)
     @task.target_id = @target.id
     @task.save
   end

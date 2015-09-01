@@ -2,17 +2,15 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>Task on rails</title>
+  <title>Task on rails<%= yield :title %></title>
   <link rel="shortcut icon" href="/assets/favicon.png" type="image/png">
  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
     <%= render partial: 'common/header' %>
-    <%= yield %>
-
+    <span class="scroll"><%= yield %></span>
 
 <div class="row text-center">
   <footer><p>(C) Task on rails 2015</p></footer>

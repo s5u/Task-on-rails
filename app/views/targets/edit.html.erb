@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-8 col-md-8 trgt-dscrptn">
-    <div><p>Targetを編集してください</p></div>
+    <div class="col-xs-12 col-md-8 trgt-dscrptn">
+      <div><p>Targetを編集してください</p></div>
       <div><img src="/assets/target.jpg" alt="Target"></div>
     </div>
-    <div class="col-sm-5 col-md-5 target-form">
+    <div class="col-xs-12 col-md-5 target-form">
       <%= form_for @target do |f| %>
         <div>
           <%= f.text_field :name, placeholder: 'Target名', maxlength: '200' %>

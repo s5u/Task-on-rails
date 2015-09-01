@@ -1,0 +1,16 @@
+<% provide :title, " | #{@user.name}さん" %>
+<div class="container">
+  <div class="row my-page">
+    <div class="col-xs-12 col-md-12">
+      <div class="user_profile">
+        <div class="image" style="background-image: url(<%= @user.avatar.url(:medium) %>);">ll</div>
+        <h2><%= @user.name %><span><%= @user.name_kana %></span></h2>
+        <% if current_user.id == @user.id %>
+        <div class="to-prof-edit">
+          <%= button_to 'プロフィール編集', edit_user_path(current_user.id), method: :get %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

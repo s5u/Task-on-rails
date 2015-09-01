@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
   def index
     @task = Task.find(params[:task_id])
-    @todos = Todo.where(task_id: params[:task_id])
+    @todos = Todo.where(task_id: params[:task_id]).where(user_id: current_user.id)
   end
 
   def new
@@ -27,7 +27,7 @@ class TodosController < ApplicationController
   def create
     @target  = Target.find(params[:target_id])
     @task  = Task.find(params[:task_id])
-    @todo = Todo.create(todo_params)
+    @todo = Todo.create(name: todo_params[:name],text: todo_params[:text],user_id: current_user.id)
     @todo.task_id = @task.id
     @todo.target_id = @target.id
     @todo.save

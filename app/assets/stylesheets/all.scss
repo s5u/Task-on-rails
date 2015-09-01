@@ -4,16 +4,15 @@ body {
   font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
 }
 
-.text-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div {
+.scroll div {
   overflow: scroll;
   word-break: break-all;
 }
 
+.text-center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .clearfix:after {
   content: "";
@@ -21,9 +20,25 @@ div {
   display: block;
 }
 
+.bar-logo {
+  font-size: 200%;
+}
+
 .to-input {
   text-align: center;
   margin: 10px auto;
+}
+
+.to-input-target {
+  text-align: center;
+  margin: 10px auto;
+  width: 50%;
+}
+
+.to-home {
+  text-align: center;
+  margin: 10px auto;
+  width: 50%;
 }
 
 
@@ -45,17 +60,20 @@ div {
   margin-right: 1%;
   margin-left: 8%;
   width: 50%;
+  font-size: 70%;
 }
 
 .edit-button {
   float: left;
   margin-right: 1%;
   width: 20%;
+  font-size: 70%;
 }
 
 .delete-button {
   float: left;
   width: 20%;
+  font-size: 70%;
 }
 
 .button-position {
@@ -64,3 +82,15 @@ div {
   right: 10px;
   left: 10px;
 }
+
+.rail-arrow {
+  width:  7.5%;
+  margin: 0 auto;
+  min-width: 40px;
+  min-height: 41px;
+}
+
+// .tree img {
+//   min-width: 300px;
+//   min-height: 198px;
+// }
