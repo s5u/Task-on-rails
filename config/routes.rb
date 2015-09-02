@@ -8,5 +8,4 @@ Rails.application.routes.draw do
     end
   end
   patch '/targets/:target_id/tasks/:task_id/todos/:id(.:format)/achieve' => 'todos#achieve'
-  patch '/targets/:target_id/tasks/:id' => 'tasks#achieve'
 end

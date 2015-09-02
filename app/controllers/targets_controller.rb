@@ -1,6 +1,20 @@
 class TargetsController < ApplicationController
   def index
     @targets = Target.order(created_at: :DESC).where(user_id: current_user.id).page(params[:page]).per(6)
+
+    # if @targets.length != 0
+    #   @targets.each do |target|
+    #     if target.todos.achieve == true
+    #       target_todos_achieves << 1
+    #     end
+    #   end
+    #   if target_todos_achieves.length > 0
+    #     @targets.each do |target|
+    #       target.achieve = false
+    #     end
+    #     @targets.save
+    #   end
+    # end
   end
 
   def new

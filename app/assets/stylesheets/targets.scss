@@ -26,6 +26,7 @@
   -moz-box-shadow: 3px 3px 10px #777;
   box-shadow: 3px 3px 10px #777;
   max-width: 404px;
+  margin-bottom: 10px;
 }
 
 .trgt-dscrptn {
@@ -115,3 +116,58 @@
   left: 10px;
   right: 10px;
   }
+
+
+.description-field {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  float: right;
+  opacity: 0.8;
+  background-color: #1e50a2;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.description1 {
+  background-color: #1e50a2;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 7px;
+}
+
+.description2 {
+  background-color: #1e50a2;
+  border-radius: 5px;
+  padding: 3px;
+  margin-bottom: 7px;
+}
+
+.description3 {
+  background-color: #1e50a2;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.description-img {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  float: left;
+  border: solid 1px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.input-prof {
+  text-align: center;
+  color: #fff;
+  background-color: #ff0000;
+  border-radius: 3px;
+  line-height: 1.6;
+  width: 70%;
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+}
