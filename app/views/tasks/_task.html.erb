@@ -1,16 +1,35 @@
-<div class="task">
-  <div class= "task-h4"><h4><%= task.name %></h4></div>
-  <div class= "task-p"><p><%= task.text %></p></div>
-  <div class="button-position">
-    <div class="list-button">
-      <%= button_to "達成に必要なTodo", target_task_todos_path(task.target_id,task.id), method: :get %>
-    </div>
-    <div class="edit-button">
-      <%= button_to "編集", edit_target_task_path(task.target_id,task.id), method: :get %>
-    </div>
-    <div class="delete-button">
-      <%= button_to "削除", target_task_path(task.target_id,task.id), method: :delete %>
+<% if task.achieve == false %>
+  <div class="task">
+    <div class= "task-h4"><h4><%= task.name %></h4></div>
+    <div class= "task-p"><p><%= task.text %></p></div>
+    <div class="button-position">
+      <div class="list-button">
+        <%= button_to "達成に必要なTodo", target_task_todos_path(task.target_id,task.id), method: :get %>
+      </div>
+      <div class="edit-button">
+        <%= button_to "編集", edit_target_task_path(task.target_id,task.id), method: :get %>
+      </div>
+      <div class="delete-button">
+        <%= button_to "削除", target_task_path(task.target_id,task.id), method: :delete %>
+      </div>
     </div>
   </div>
-</div>
 <%= render 'tasks/arrow' %>
+<% else %>
+  <div class="task-done">
+    <div class= "task-h4-done"><h4><%= task.name %></h4></div>
+    <div class= "task-p-done"><p><%= task.text %></p></div>
+    <div class="button-position">
+      <div class="list-button">
+        <%= button_to "達成に必要なTodo", target_task_todos_path(task.target_id,task.id), method: :get %>
+      </div>
+      <div class="edit-button">
+        <%= button_to "編集", edit_target_task_path(task.target_id,task.id), method: :get %>
+      </div>
+      <div class="delete-button">
+        <%= button_to "削除", target_task_path(task.target_id,task.id), method: :delete %>
+      </div>
+    </div>
+  </div>
+<%= render 'tasks/arrow' %>
+<% end %>

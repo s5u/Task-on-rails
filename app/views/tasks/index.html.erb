@@ -7,8 +7,14 @@
     </div>
   </div>
   <div class="col-xs-12 col-md-9 tsk-fld">
-    <div><%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %></div>
-    <h3 class="task-otsu">「<%= @target.name %>」達成！お疲れさまでした！</h3>
+    <div>
+      <%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %>
+    </div>
+    <% if @tasks_achieved == true %>
+      <h3 class="task-otsu">「<%= @target.name %>」達成！お疲れさまでした！</h3>
+    <% else %>
+      <h3 class="task-otsu"></h3>
+    <% end %>
     </div>
   </div>
  </div>

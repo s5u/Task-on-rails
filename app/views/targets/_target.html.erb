@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-md-12 target">
+<!-- <div class="col-xs-12 col-md-12 target">
     <div class= "target-h4"><h4><%= target.name %></h4></div>
     <div class= "target-p"><p><%= target.text %></p></div>
     <div class="button-position">
@@ -12,4 +12,37 @@
         <%= button_to "削除", target_path(target.id), method: :delete %>
       </div>
     </div>
-</div>
+</div> -->
+<% if target.achieve == false %>
+  <div class="col-xs-12 col-md-12 target">
+      <div class= "target-h4"><h4><%= target.name %></h4></div>
+      <div class= "target-p"><p><%= target.text %></p></div>
+      <div class="button-position">
+        <div class="list-button">
+          <%= button_to "達成に必要なTask", target_tasks_path(target.id), method: :get %>
+        </div>
+        <div class="edit-button">
+          <%= button_to "編集", edit_target_path(target.id), method: :get %>
+        </div>
+        <div class="delete-button">
+          <%= button_to "削除", target_path(target.id), method: :delete %>
+        </div>
+      </div>
+  </div>
+<% else %>
+  <div class="col-xs-12 col-md-12 target-done">
+      <div class= "target-h4-done"><h4><%= target.name %></h4></div>
+      <div class= "target-p-done"><p><%= target.text %></p></div>
+      <div class="button-position">
+        <div class="list-button">
+          <%= button_to "達成に必要なTask", target_tasks_path(target.id), method: :get %>
+        </div>
+        <div class="edit-button">
+          <%= button_to "編集", edit_target_path(target.id), method: :get %>
+        </div>
+        <div class="delete-button">
+          <%= button_to "削除", target_path(target.id), method: :delete %>
+        </div>
+      </div>
+  </div>
+<% end %>

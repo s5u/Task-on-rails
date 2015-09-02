@@ -2,6 +2,25 @@ class TasksController < ApplicationController
   def index
     @target = Target.find(params[:target_id])
     @tasks = Task.where(target_id: params[:target_id]).where(user_id: current_user.id)
+    tasks_achieves = []
+    @tasks_achieved = false
+
+    if @tasks.length != 0
+      @tasks.each do |task|
+        if task.achieve == true
+          tasks_achieves << 1
+        end
+      end
+      if tasks_achieves.length == @tasks.length
+        @tasks_achieved = true
+        @target.achieve = true
+      else
+        @target.achieve = false
+      end
+    else
+      @target.achieve = true
+    end
+    @target.save
   end
 
   def new
@@ -28,6 +47,8 @@ class TasksController < ApplicationController
     @target  = Target.find(params[:target_id])
     @task = Task.create(name: task_params[:name],text: task_params[:text],user_id: current_user.id)
     @task.target_id = @target.id
+    @target.achieve = false;
+    @target.save
     @task.save
   end
 

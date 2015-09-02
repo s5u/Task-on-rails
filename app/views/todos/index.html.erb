@@ -8,8 +8,14 @@
     </div>
     </div>
   <div class="col-xs-12 col-md-9 td-fld">
-    <div><%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %></div>
-    <h3 class="todo-otsu">「<%= @task.name %>」達成！お疲れさまでした！</h3>
+    <div>
+      <%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %>
+    </div>
+    <% if @todo_achieved == true %>
+      <h3 class="todo-otsu">「<%= @task.name %>」達成！お疲れさまでした！</h3>
+    <% else %>
+      <h3 class="todo-otsu"></h3>
+    <% end %>
   </div>
  </div>
 </div>

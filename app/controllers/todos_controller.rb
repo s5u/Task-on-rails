@@ -2,6 +2,25 @@ class TodosController < ApplicationController
   def index
     @task = Task.find(params[:task_id])
     @todos = Todo.where(task_id: params[:task_id]).where(user_id: current_user.id)
+    todo_achieves = []
+    @todo_achieved = false
+
+    if @todos.length != 0
+      @todos.each do |todo|
+        if todo.achieve == true
+          todo_achieves << 1
+        end
+      end
+      if todo_achieves.length == @todos.length
+        @todo_achieved = true
+        @task.achieve = true
+      else
+        @task.achieve = false
+      end
+    else
+      @task.achieve = true
+    end
+    @task.save
   end
 
   def new
@@ -41,6 +60,10 @@ class TodosController < ApplicationController
     @todo = Todo.create(name: todo_params[:name],text: todo_params[:text],user_id: current_user.id)
     @todo.task_id = @task.id
     @todo.target_id = @target.id
+    @target.achieve = false
+    @task.achieve  = false
+    @target.save
+    @task.save
     @todo.save
   end
 
