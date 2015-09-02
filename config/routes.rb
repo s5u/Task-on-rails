@@ -7,4 +7,5 @@ Rails.application.routes.draw do
       resources :todos
     end
   end
+  patch '/targets/:target_id/tasks/:task_id/todos/:id(.:format)/achieve' => 'todos#achieve'
 end

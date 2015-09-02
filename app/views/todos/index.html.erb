@@ -7,7 +7,7 @@
       <%= button_to "Todoを追加する", new_target_task_todo_path(@task.target_id, @task.id), method: :get %>
     </div>
     </div>
-  <div class="col-xs-12 col-md-9 tsk-fld">
+  <div class="col-xs-12 col-md-9 td-fld">
     <div><%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %></div>
     <h3 class="todo-otsu">「<%= @task.name %>」達成！お疲れさまでした！</h3>
   </div>

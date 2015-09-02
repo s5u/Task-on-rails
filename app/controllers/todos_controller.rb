@@ -24,6 +24,17 @@ class TodosController < ApplicationController
     redirect_to action: :index
   end
 
+  def achieve
+    @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
+    if @todo.achieve == false
+      @todo.achieve = true
+    else
+      @todo.achieve = false
+    end
+    @todo.save
+    redirect_to action: :index
+  end
+
   def create
     @target  = Target.find(params[:target_id])
     @task  = Task.find(params[:task_id])
@@ -37,8 +48,4 @@ class TodosController < ApplicationController
   def todo_params
     params.require(:todo).permit(:name, :text)
   end
-
-  # def todo_checkbox_params
-  #   params.require(:todo).permit(:archieve)
-  # end
 end

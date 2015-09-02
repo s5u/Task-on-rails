@@ -1,13 +1,35 @@
-<div class="todo">
-  <div class= "todo-h4"><h4><%= todo.name %></h4></div>
-  <div class= "todo-p"><p><%= todo.text %></p></div>
-  <div class="todo-button-position">
-   <div class="todo-edit-button">
-    <%= button_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :get %>
+<% if todo.achieve == false %>
+  <div class="todo">
+    <div class= "todo-h4"><h4><%= todo.name %></h4></div>
+    <div class= "todo-p"><p><%= todo.text %></p></div>
+    <div class="button-position">
+     <div class="done-button">
+      <%= button_to "完了", "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/achieve", method: :patch %>
+     </div>
+     <div class="edit-button">
+      <%= button_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :get %>
+      </div>
+     <div class="delete-button">
+       <%= button_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
+     </div>
     </div>
-   <div class="todo-delete-button">
-     <%= button_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
-   </div>
   </div>
-</div>
-<%= render 'todos/arrow' %>
+  <%= render 'todos/arrow' %>
+<% else %>
+    <div class="todo-done">
+    <div class= "todo-h4-done"><h4><%= todo.name %></h4></div>
+    <div class= "todo-p-done"><p><%= todo.text %></p></div>
+    <div class="button-position">
+     <div class="done-button">
+      <%= button_to "完了", "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/achieve", method: :patch %>
+     </div>
+     <div class="edit-button">
+      <%= button_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :get %>
+     </div>
+     <div class="delete-button">
+       <%= button_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
+     </div>
+    </div>
+  </div>
+  <%= render 'todos/arrow' %>
+<% end %>
