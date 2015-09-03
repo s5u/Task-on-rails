@@ -2,12 +2,13 @@
  <div class="row">
   <div class="col-xs-12 col-md-3 text-center">
     <h2 class="targetname"><%= link_to "#{@task.target.name}", targets_path %></h2>
+    <div class="connect-border">.</div>
     <h2 class="taskname"><%= link_to "#{@task.name}", target_tasks_path %></h2>
     <div>
       <%= button_to "Todoを追加する", new_target_task_todo_path(@task.target_id, @task.id), method: :get %>
     </div>
     </div>
-  <div class="col-xs-12 col-md-9 td-fld">
+  <div class="col-xs-12 col-md-9 todo-field">
     <div>
       <%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %>
     </div>

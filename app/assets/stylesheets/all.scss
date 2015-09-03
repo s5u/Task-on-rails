@@ -21,7 +21,7 @@ body {
 }
 
 .bar-logo {
-  font-size: 200%;
+  font-size: 250%;
 }
 
 .to-input {
@@ -90,7 +90,38 @@ body {
   min-height: 41px;
 }
 
-// .tree img {
-//   min-width: 300px;
-//   min-height: 198px;
-// }
+
+.targetname {
+  margin-bottom: 2px;
+  padding: 5px;
+  background-color: #00bfff;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.targetname a {
+  color: #fff;
+}
+
+.targetname a:hover{
+  color: #808080;
+  opacity: 0.8;
+}
+
+.taskname {
+  margin-top: 2px;
+  margin-bottom: 15px;
+  padding: 5px;
+  background-color: #ffa500;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.taskname a {
+  color: #fff;
+}
+
+.taskname a:hover{
+  color: #808080;
+  opacity: 0.8;
+}

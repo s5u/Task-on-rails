@@ -23,7 +23,7 @@ module Taskonrails
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    #devise関係のlayoutsファイル変更設定
+    #devise関係のlayoutファイル変更設定
     config.to_prepare do
     Devise::SessionsController.layout "devise"
     Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }

@@ -341,7 +341,7 @@ fieldset[disabled] .btn-danger.active {
   top: 0;
   width: 100%;
   z-index: 10;
-  opacity: 0.8;
+  opacity: 0.9;
     /*background-image: -webkit-linear-gradient(top, #fff 0%, #f8f8f8 100%);
   background-image:      -o-linear-gradient(top, #fff 0%, #f8f8f8 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#f8f8f8));

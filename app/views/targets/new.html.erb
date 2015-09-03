@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-7 trgt-dscrptn">
-      <div><p>Targetを入力してください</p></div>
-      <div><img src="/assets/target.jpg" alt="Target"></div>
+    <div class="target-wrapper col-xs-12 col-md-7">
+      <div>
+        <p class="col-xs-12">Targetを登録してください</p>
+      </div>
+      <div>
+        <img class="col-xs-12" src="/assets/target.jpg" alt="Target">
+      </div>
     </div>
-    <div class="col-xs-12 col-md-5 target-form">
+    <div class="target-form col-xs-12 col-md-5">
       <%= form_for @target do |f| %>
         <div>
           <%= f.text_field :name, placeholder: 'Target名', maxlength: '200' %>

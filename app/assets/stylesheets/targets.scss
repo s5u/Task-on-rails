@@ -29,22 +29,25 @@
   margin-bottom: 10px;
 }
 
-.trgt-dscrptn {
-  width: 50%;
+.target-wrapper {
+  /*width: 50%;*/
 }
 
-.trgt-dscrptn p {
+.target-wrapper p {
   color: #ffffff;
   background-color: #00bfff;
   font-size:  40px;
   padding: 15px;
-  margin-bottom: 150px;
+  margin-bottom: 50px;
   border-radius: 5px;
   text-align: center;
 }
 
-.trgt-dscrptn img {
-  margin-bottom: 15px;
+.target-wrapper img {
+  margin-bottom: 30px;
+  max-width: 550px;
+  min-width: 300px;
+  border-radius: 3px;
 }
 
 .target-h4 {

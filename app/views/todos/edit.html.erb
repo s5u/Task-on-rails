@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-7 td-dscrptn">
-      <div><p>Todoを編集してください</p></div>
-      <div><img src="/assets/todo.jpg" alt="Todo"></div>
+    <div class="todo-wrapper col-xs-12 col-md-7">
+      <div>
+        <p class="col-xs-12">Todoを編集してください</p>
+      </div>
+      <div>
+        <img class="col-xs-12" src="/assets/todo.jpg" alt="Todo">
+      </div>
     </div>
-    <div class="col-xs-12 col-md-5 todo-form">
+    <div class="todo-form col-xs-12 col-md-5">
       <%= form_for @todo, :url => {:action => 'update'} do |f| %>
         <div>
           <%= f.text_field :name, placeholder: 'Todo名', maxlength: '200' %>

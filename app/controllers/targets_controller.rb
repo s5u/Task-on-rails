@@ -2,19 +2,26 @@ class TargetsController < ApplicationController
   def index
     @targets = Target.order(created_at: :DESC).where(user_id: current_user.id).page(params[:page]).per(6)
 
-    # if @targets.length != 0
-    #   @targets.each do |target|
-    #     if target.todos.achieve == true
-    #       target_todos_achieves << 1
-    #     end
-    #   end
-    #   if target_todos_achieves.length > 0
-    #     @targets.each do |target|
-    #       target.achieve = false
-    #     end
-    #     @targets.save
-    #   end
-    # end
+      @targets.each do |target|
+        @tasks = Task.where(target_id: target.id).where(user_id: current_user.id)
+        tasks_achieves = []
+        if @tasks.present?
+          @tasks.each do |task|
+          tasks_achieves << 1 if task.achieve == true
+          end
+        else
+          target.achieve = true
+          target.save
+        end
+      if tasks_achieves.length == @tasks.length
+        target.achieve = true
+      else
+        target.achieve = false
+      end
+      target.save
+
+   end
+
   end
 
   def new

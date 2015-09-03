@@ -2,11 +2,11 @@
  <div class="row">
   <div class="col-xs-12 col-md-3 text-center">
     <h2 class="targetname"><%= link_to "#{@target.name}", targets_path %></h2>
-    <div>
+    <div style="margin-top: 15px;">
       <%= button_to "Taskを追加する", new_target_task_path(@target.id), method: :get %>
     </div>
   </div>
-  <div class="col-xs-12 col-md-9 tsk-fld">
+  <div class="col-xs-12 col-md-9 task-field">
     <div>
       <%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %>
     </div>

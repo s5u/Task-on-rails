@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-7 tsk-dscrptn">
-      <div><p>Taskを入力してください</p></div>
-      <div><img src="/assets/task.jpg" alt="Task"></div>
+    <div class="task-wrapper col-xs-12 col-md-7">
+      <div>
+        <p class="col-xs-12">Taskを登録してください</p>
+      </div>
+      <div>
+        <img class="col-xs-12" src="/assets/task.jpg" alt="Task">
+      </div>
     </div>
-    <div class="col-xs-12 col-md-5 task-form">
+    <div class="task-form col-xs-12 col-md-5">
       <%= form_for @task, :url => {:action => 'create'} do |f| %>
         <div>
           <%= f.text_field :name, placeholder: 'Task名', maxlength: '200' %>
@@ -19,4 +23,5 @@
     </div>
   </div>
 </div>
+
 
