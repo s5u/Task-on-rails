@@ -52,3 +52,7 @@ group :development, :test do
   # gem 'sprockets'
 end
 
+group :production, :staging do
+  gem 'rails_12factor'
+end
+
