@@ -91,9 +91,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => ENV['MAIL_USERNAME'], #gmailアドレス
-    # :password => ENV['MAIL_PASSWORD'], #パスワード
-    :password => ENV['APP_PASSWORD'], #アプリ固有のパスワード
+    :user_name => 'taskonrails', #gmailアドレス
+    :password => 'lrnftrabexbohzxy', #アプリ固有のパスワード
 
     :authentication => 'login',
   }
