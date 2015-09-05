@@ -49,7 +49,7 @@ Rails.application.configure do
     :port => 587,
     :domain => 'smtp.gmail.com',
     :user_name => ENV['MAIL_USERNAME'], #gmailアドレス
-    :password => ENV['MAIL_PASSWORD'], #パスワード
+    # :password => ENV['MAIL_PASSWORD'], #パスワード　アプリ固有のパスワードのみでOK!
     :password => ENV['APP_PASSWORD'], #アプリ固有のパスワード
     :authentication => 'login',
   }
