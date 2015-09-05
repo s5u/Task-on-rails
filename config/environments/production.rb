@@ -94,6 +94,9 @@ Rails.application.configure do
     # :user_name => ENV['MAIL_USERNAME'], #gmailアドレス
     # :password => ENV['MAIL_PASSWORD'], #パスワード
     # :password => ENV['APP_PASSWORD'], #アプリ固有のパスワード
+    :user_name => 'taskonrails', #gmailアドレス
+    :password => 'Zerugei99', #パスワード
+    :password => 'lrnftrabexbohzxy', #アプリ固有のパスワード
 
     :authentication => 'login',
   }
