@@ -19,7 +19,6 @@ class TargetsController < ApplicationController
         target.achieve = false
       end
       target.save
-
    end
 
   end

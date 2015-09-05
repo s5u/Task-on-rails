@@ -17,7 +17,7 @@
 <% else %>
   <div class="col-xs-12 col-md-12 target-done">
       <div class= "target-h4-done"><h4><%= target.name %></h4></div>
-      <div class= "target-p-done"><p><%= target.text %></p></div>
+      <div class="target-p-done"><p><%= target.text %></p></div>
       <div class="button-position">
         <div class="list-button">
           <%= button_to "達成に必要なTask", target_tasks_path(target.id), method: :get %>
