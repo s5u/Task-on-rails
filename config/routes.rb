@@ -8,4 +8,10 @@ Rails.application.routes.draw do
     end
   end
   patch '/targets/:target_id/tasks/:task_id/todos/:id(.:format)/achieve' => 'todos#achieve'
+
+  #お問い合わせ
+  get 'contact' => 'contact#index'              # 入力画面
+  post 'contact/confirm' => 'contact#confirm'   # 確認画面
+  post 'contact/thanks' => 'contact#thanks'     # 送信完了画面
+
 end
