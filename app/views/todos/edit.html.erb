@@ -11,7 +11,7 @@
     <div class="todo-form col-xs-12 col-md-5">
       <%= form_for @todo, :url => {:action => 'update'} do |f| %>
         <div>
-          <%= f.text_field :name, placeholder: 'Todo名', maxlength: '200' %>
+          <%= f.text_field :name, placeholder: 'Todo名', maxlength: '200', autofocus: true %>
         </div>
         <div>
           <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>

@@ -11,7 +11,7 @@
     <div class="target-form col-xs-12 col-md-5">
       <%= form_for @target do |f| %>
         <div>
-          <%= f.text_field :name, placeholder: 'Target名', maxlength: '200' %>
+          <%= f.text_field :name, placeholder: 'Target名', maxlength: '200', autofocus: true %>
         </div>
         <div>
           <%= f.text_area :text, placeholder: 'メモ',  cols: "30", rows: "10" %>

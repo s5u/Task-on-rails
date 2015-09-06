@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-xs-6 col-md-6">
       <div class="to-input">
-        <%= button_to "Todoを入力する", new_target_task_todo_path(@task.target_id, @task.id), method: :get %>
+        <%= button_to "Todoを入力する", new_target_task_todo_path(@task.target_id, @task.id), method: :get, autofocus: true %>
       </div>
     </div>
     <div class="col-xs-6 col-md-6">
