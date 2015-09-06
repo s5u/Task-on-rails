@@ -1,0 +1,22 @@
+// Place all the styles related to the contact controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contact-form {
+  // float: right;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  -webkit-box-shadow: 3px 3px 10px #777;
+  -moz-box-shadow: 3px 3px 10px #777;
+  box-shadow: 3px 3px 10px #777;
+  margin: 20px auto 30px auto;
+  width: 70%;
+  max-width: 550px;
+}
+
+.contact-title {
+  font-size: 30px;
+  text-align: center;
+  margin: 10px 15px;
+}
