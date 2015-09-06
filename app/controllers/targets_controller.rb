@@ -1,26 +1,9 @@
 class TargetsController < ApplicationController
+  before_action :target_find, only: [:destroy, :edit, :update]
+
   def index
     @targets = Target.order(created_at: :DESC).where(user_id: current_user.id).page(params[:page]).per(6)
-
-      @targets.each do |target|
-        @tasks = Task.where(target_id: target.id).where(user_id: current_user.id)
-        tasks_achieves = []
-        if @tasks.present?
-          @tasks.each do |task|
-          tasks_achieves << 1 if task.achieve == true
-          end
-        else
-          target.achieve = true
-          target.save
-        end
-      if tasks_achieves.length == @tasks.length
-        target.achieve = true
-      else
-        target.achieve = false
-      end
-      target.save
-   end
-
+    Target.target_achieve_judge(@targets, current_user.id)
   end
 
   def new
@@ -32,17 +15,14 @@ class TargetsController < ApplicationController
   end
 
   def destroy
-    @target = Target.find(params[:id])
     @target.destroy
     redirect_to action: :index
   end
 
   def edit
-    @target = Target.find(params[:id])
   end
 
   def update
-    @target = Target.find(params[:id])
     @target.update(target_params)
     redirect_to action: :index
   end
@@ -50,5 +30,8 @@ class TargetsController < ApplicationController
   private
   def target_params
     params.require(:target).permit(:name, :text)
+  end
+  def target_find
+    @target = Target.find(params[:id])
   end
 end

@@ -1,26 +1,12 @@
 class TodosController < ApplicationController
+  before_action :todo_find, only: [:destroy, :edit, :update, :achieve]
+
   def index
     @task = Task.find(params[:task_id])
-    @todos = Todo.where(task_id: params[:task_id]).where(user_id: current_user.id)
+    @todos = Todo.where(task_id: params[:task_id], user_id: current_user.id)
     todo_achieves = []
     @todo_achieved = false
-
-    if @todos.length != 0
-      @todos.each do |todo|
-        if todo.achieve == true
-          todo_achieves << 1
-        end
-      end
-      if todo_achieves.length == @todos.length
-        @todo_achieved = true
-        @task.achieve = true
-      else
-        @task.achieve = false
-      end
-    else
-      @task.achieve = true
-    end
-    @task.save
+    @todo_achieved = Todo.todo_achieve_judge(@task,@todos,todo_achieves,@todo_achieved)
   end
 
   def new
@@ -28,23 +14,19 @@ class TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
     @todo.destroy
     redirect_to action: :index
   end
 
   def edit
-    @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
   end
 
   def update
-    @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
     @todo.update(todo_params)
     redirect_to action: :index
   end
 
   def achieve
-    @todo = Todo.where(task_id: params[:task_id]).where(id: params[:id]).first
     if @todo.achieve == false
       @todo.achieve = true
     else
@@ -70,5 +52,9 @@ class TodosController < ApplicationController
   private
   def todo_params
     params.require(:todo).permit(:name, :text)
+  end
+
+  def todo_find
+    @todo = Todo.where(task_id: params[:task_id], id: params[:id]).first
   end
 end

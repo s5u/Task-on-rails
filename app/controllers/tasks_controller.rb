@@ -1,17 +1,12 @@
 class TasksController < ApplicationController
+  before_action :task_find, only: [:destroy, :edit, :update]
+
   def index
     @target = Target.find(params[:target_id])
     @tasks = Task.where(target_id: params[:target_id]).where(user_id: current_user.id)
     tasks_achieves = []
     @tasks_achieved = false
-    @tasks.each do |task|
-      if task.achieve == true
-        tasks_achieves << 1
-      end
-    end
-    if @tasks.length == tasks_achieves.length
-      @tasks_achieved = true
-    end
+    @tasks_achieved = Task.task_achieve_judge(@tasks, tasks_achieves, @tasks_achieved)
   end
 
   def new
@@ -19,17 +14,14 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
     @task.destroy
     redirect_to action: :index
   end
 
   def edit
-    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
   end
 
   def update
-    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
     @task.update(task_params)
     redirect_to action: :index
   end
@@ -46,5 +38,8 @@ class TasksController < ApplicationController
   private
   def task_params
     params.require(:task).permit(:name, :text)
+  end
+  def task_find
+    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
   end
 end
