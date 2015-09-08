@@ -1,7 +1,7 @@
 <% if target.achieve == false %>
   <div class="col-xs-12 col-md-12 target">
-      <div class="target-h4 overflow_hidden"><h4><%= target.name %></h4></div>
-      <div class="target-p overflow_hidden"><p><%= target.text %></p></div>
+      <div class="target-h4 overflow-hidden"><h4><%= target.name %></h4></div>
+      <div class="target-p overflow-hidden"><p><%= target.text %></p></div>
       <div class="button-position">
         <div class="list-button">
           <%= button_to "達成に必要なTask", target_tasks_path(target.id), method: :get %>
@@ -16,8 +16,8 @@
   </div>
 <% else %>
   <div class="col-xs-12 col-md-12 target-done">
-      <div class= "target-h4-done overflow_hidden"><h4><%= target.name %></h4></div>
-      <div class="target-p-done overflow_hidden"><p><%= target.text %></p></div>
+      <div class= "target-h4-done overflow-hidden"><h4><%= target.name %></h4></div>
+      <div class="target-p-done overflow-hidden"><p><%= target.text %></p></div>
       <div class="button-position">
         <div class="list-button">
           <%= button_to "達成に必要なTask", target_tasks_path(target.id), method: :get %>
