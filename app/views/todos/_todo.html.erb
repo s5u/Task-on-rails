@@ -1,7 +1,7 @@
 <% if todo.achieve == false %>
   <div class="todo">
-    <div class= "todo-h4"><h4><%= todo.name %></h4></div>
-    <div class= "todo-p"><p><%= todo.text %></p></div>
+    <div class="todo-h4 overflow_hidden"><h4><%= todo.name %></h4></div>
+    <div class="todo-p overflow_hidden"><p><%= todo.text %></p></div>
     <div class="button-position">
      <div class="done-button">
       <%= button_to "完了", "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/achieve", method: :patch %>
@@ -17,8 +17,8 @@
   <%= render 'todos/arrow' %>
 <% else %>
     <div class="todo-done">
-    <div class= "todo-h4-done"><h4><%= todo.name %></h4></div>
-    <div class= "todo-p-done"><p><%= todo.text %></p></div>
+    <div class="todo-h4-done overflow_hidden"><h4><%= todo.name %></h4></div>
+    <div class="todo-p-done overflow_hidden"><p><%= todo.text %></p></div>
     <div class="button-position">
      <div class="done-button">
       <%= button_to "完了", "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/achieve", method: :patch %>
