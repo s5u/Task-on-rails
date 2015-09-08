@@ -8,7 +8,7 @@
   </div>
   <div class="col-xs-12 col-md-9 task-field">
     <div>
-      <%= render :partial => "task", :collection => @tasks.order(created_at: :DESC) %>
+      <%= render :partial => "task", :collection => @tasks.order(created_at: :ASC) %>
     </div>
     <% if @tasks_achieved == true %>
       <h3 class="task-otsu">「<%= @target.name %>」達成！お疲れさまでした！</h3>

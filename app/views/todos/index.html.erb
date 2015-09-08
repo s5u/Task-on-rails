@@ -10,7 +10,7 @@
     </div>
   <div class="col-xs-12 col-md-9 todo-field">
     <div>
-      <%= render :partial => "todo", :collection => @todos.order(created_at: :DESC) %>
+      <%= render :partial => "todo", :collection => @todos.order(created_at: :ASC) %>
     </div>
     <% if @todo_achieved == true %>
       <h3 class="todo-otsu">「<%= @task.name %>」達成！お疲れさまでした！</h3>
