@@ -2,7 +2,7 @@ class TargetsController < ApplicationController
   before_action :target_find, only: [:destroy, :edit, :update]
 
   def index
-    @targets = Target.order(created_at: :DESC).where(user_id: current_user.id).page(params[:page]).per(6)
+    @targets = Target.order(created_at: :ASC).where(user_id: current_user.id).page(params[:page]).per(6)
     Target.target_achieve_judge(@targets, current_user.id)
   end
 
