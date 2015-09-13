@@ -4,11 +4,11 @@
       <div>
         <div class="col-xs-12 col-md-7">
           <div class="description-field">
-          <div style="color: #fff;">■使い方</div>
           <div class="description-message">①プロフィールを登録しましょう</div>
           <div class="description-message">②目標(Target)を登録しましょう</div>
           <div class="description-message">③次に目標達成に必要な作業(Task)を登録しましょう</div>
           <div class="description-last">④最後に作業を具体的に分割してTodoを登録しましょう</div>
+          <div><a href="http://ms9i.hatenablog.com/entries/2015/09/09" style="color:orange;">※詳しい使い方はこちらをクリックしてください</a></div>
           </div>
         </div>
         <div class="col-xs-12 col-md-5">
@@ -29,8 +29,10 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <div class="message">どんなに大きなTargetでも、小さなTodoの組み合わせでできているはずです。Todoを片付けて、Targetを達成しましょう！</div>
-        <div class="inner-box"><%= render :partial => "target", :collection => @targets %></div>
+        <div class="message">どんなに大きなTargetでも、小さなTodoの組み合わせでできているはずです。Todoを完了して、Targetを達成しましょう！</div>
+        <div>
+          <%= render :partial => "target", :collection => @targets %>
+        </div>
       </div>
     </div>
   </div>
