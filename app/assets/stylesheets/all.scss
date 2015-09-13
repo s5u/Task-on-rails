@@ -85,10 +85,9 @@ body {
 }
 
 .rail-arrow {
-  width:  7.5%;
-  margin: 0 auto;
   min-width: 40px;
   min-height: 41px;
+  text-align: center;
 }
 
 
@@ -125,4 +124,10 @@ body {
 .taskname a:hover{
   color: #808080;
   opacity: 0.8;
+}
+
+.rail-sortable {
+  .item {
+    cursor: move;
+  }
 }
