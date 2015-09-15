@@ -7,7 +7,7 @@
     </div>
   </div>
   <div class="col-xs-12 col-md-9 task-field">
-    <div>
+    <div class="rail-sortable">
       <%= render :partial => "task", :collection => @tasks.order(created_at: :ASC) %>
     </div>
     <% if @tasks_achieved == true %>

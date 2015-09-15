@@ -1,4 +1,7 @@
 class Todo < ActiveRecord::Base
+  include RankedModel
+  ranks :row_order
+
   #association
   belongs_to :task
 

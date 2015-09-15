@@ -9,6 +9,9 @@
       <div class="to-input">
         <%= button_to "Todoを入力する", new_target_task_todo_path(@task.target_id, @task.id), method: :get, autofocus: true %>
       </div>
+      <div class="to-input">
+        <%= button_to "次のTaskを入力する", new_target_task_path(@task.target_id), method: :get %>
+      </div>
     </div>
     <div class="col-xs-6 col-md-6">
       <div class="to-list">

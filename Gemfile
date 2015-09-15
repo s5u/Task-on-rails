@@ -57,3 +57,6 @@ end
 gem 'devise'
 gem 'paperclip'
 gem 'kaminari'
+gem 'ranked-model'
+gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'

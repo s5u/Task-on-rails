@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
+  include RankedModel
+  ranks :row_order
+
   #association
   belongs_to :target
   has_many   :todos, dependent: :destroy

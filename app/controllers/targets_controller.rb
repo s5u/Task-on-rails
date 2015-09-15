@@ -10,10 +10,6 @@ class TargetsController < ApplicationController
     @target = Target.new
   end
 
-  def create
-    @target = Target.create(name: target_params[:name],text: target_params[:text],user_id: current_user.id)
-  end
-
   def destroy
     @target.destroy
     redirect_to action: :index
@@ -25,6 +21,10 @@ class TargetsController < ApplicationController
   def update
     @target.update(target_params)
     redirect_to action: :index
+  end
+
+  def create
+    @target = Target.create(name: target_params[:name], text: target_params[:text], user_id: current_user.id)
   end
 
   private

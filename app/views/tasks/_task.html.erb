@@ -1,5 +1,6 @@
 <% if task.achieve == false %>
-  <div class="task">
+ <div class="item" data-model-name="<%= Task.name.underscore %>" data-update-url="<%= "/targets/#{task.target_id}/tasks/#{task.id}/sort" %>">
+   <div class="task">
     <div class="task-h4 overflow-hidden"><h4><%= task.name %></h4></div>
     <div class="task-p overflow-hidden"><p><%= task.text %></p></div>
     <div class="button-position">
@@ -14,9 +15,11 @@
       </div>
     </div>
   </div>
-<%= render 'tasks/arrow' %>
+  <%= render 'common/arrow' %>
+ </div>
 <% else %>
-  <div class="task-done">
+  <div class="item" data-model-name="<%= Task.name.underscore %>" data-update-url="<%= "/targets/#{task.target_id}/tasks/#{task.id}/sort" %>">
+    <div class="task-done">
     <div class="task-h4-done overflow-hidden"><h4><%= task.name %></h4></div>
     <div class="task-p-done overflow-hidden"><p><%= task.text %></p></div>
     <div class="button-position">
@@ -31,5 +34,6 @@
       </div>
     </div>
   </div>
-<%= render 'tasks/arrow' %>
+  <%= render 'common/arrow' %>
+  </div>
 <% end %>

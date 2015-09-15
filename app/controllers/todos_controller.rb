@@ -3,7 +3,7 @@ class TodosController < ApplicationController
 
   def index
     @task = Task.find(params[:task_id])
-    @todos = Todo.where(task_id: params[:task_id], user_id: current_user.id)
+    @todos = Todo.rank(:row_order).where(task_id: params[:task_id], user_id: current_user.id)
     todo_achieves = []
     @todo_achieved = false
     @todo_achieved = Todo.todo_achieve_judge(@task,@todos,todo_achieves,@todo_achieved)
@@ -36,10 +36,16 @@ class TodosController < ApplicationController
     redirect_to action: :index
   end
 
+  def sort
+    todo =  Todo.where(task_id: params[:task_id], id: params[:todo_id]).first
+    todo.update(todo_params)
+    render nothing: true
+  end
+
   def create
     @target  = Target.find(params[:target_id])
     @task  = Task.find(params[:task_id])
-    @todo = Todo.create(name: todo_params[:name],text: todo_params[:text],user_id: current_user.id)
+    @todo = Todo.create(name: todo_params[:name], text: todo_params[:text], user_id: current_user.id)
     @todo.task_id = @task.id
     @todo.target_id = @target.id
     @target.achieve = false
@@ -51,7 +57,7 @@ class TodosController < ApplicationController
 
   private
   def todo_params
-    params.require(:todo).permit(:name, :text)
+    params.require(:todo).permit(:name, :text, :row_order_position)
   end
 
   def todo_find

@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @target = Target.find(params[:target_id])
-    @tasks = Task.where(target_id: params[:target_id]).where(user_id: current_user.id)
+    @tasks = Task.rank(:row_order).where(target_id: params[:target_id], user_id: current_user.id)
     tasks_achieves = []
     @tasks_achieved = false
     @tasks_achieved = Task.task_achieve_judge(@tasks, tasks_achieves, @tasks_achieved)
@@ -26,9 +26,15 @@ class TasksController < ApplicationController
     redirect_to action: :index
   end
 
+  def sort
+    task = Task.where(target_id: params[:target_id], id: params[:task_id]).first
+    task.update(task_params)
+    render nothing: true
+  end
+
   def create
     @target  = Target.find(params[:target_id])
-    @task = Task.create(name: task_params[:name],text: task_params[:text],user_id: current_user.id)
+    @task = Task.create(name: task_params[:name], text: task_params[:text], user_id: current_user.id)
     @task.target_id = @target.id
     @target.achieve = false;
     @target.save
@@ -37,9 +43,10 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:name, :text)
+    params.require(:task).permit(:name, :text, :row_order_position)
   end
+
   def task_find
-    @task = Task.where(target_id: params[:target_id]).where(id: params[:id]).first
+    @task = Task.where(target_id: params[:target_id], id: params[:id]).first
   end
 end

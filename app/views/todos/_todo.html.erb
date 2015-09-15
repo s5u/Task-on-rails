@@ -1,5 +1,6 @@
 <% if todo.achieve == false %>
-  <div class="todo">
+ <div class="item" data-model-name="<%= Todo.name.underscore %>" data-update-url="<%= "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/sort" %>">
+   <div class="todo">
     <div class="todo-h4 overflow-hidden"><h4><%= todo.name %></h4></div>
     <div class="todo-p overflow-hidden"><p><%= todo.text %></p></div>
     <div class="button-position">
@@ -8,14 +9,16 @@
      </div>
      <div class="edit-button">
       <%= button_to "編集", edit_target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :get %>
-      </div>
+     </div>
      <div class="delete-button">
        <%= button_to "削除", target_task_todo_path(todo.target_id,todo.task_id,todo.id), method: :delete %>
      </div>
     </div>
-  </div>
-  <%= render 'todos/arrow' %>
+   </div>
+  <%= render 'common/arrow' %>
+ </div>
 <% else %>
+  <div class="item" data-model-name="<%= Todo.name.underscore %>" data-update-url="<%= "/targets/#{todo.target_id}/tasks/#{todo.task_id}/todos/#{todo.id}/sort" %>">
     <div class="todo-done">
     <div class="todo-h4-done overflow-hidden"><h4><%= todo.name %></h4></div>
     <div class="todo-p-done overflow-hidden"><p><%= todo.text %></p></div>
@@ -31,5 +34,6 @@
      </div>
     </div>
   </div>
-  <%= render 'todos/arrow' %>
+  <%= render 'common/arrow' %>
+  </div>
 <% end %>
