@@ -27,11 +27,7 @@ class TodosController < ApplicationController
   end
 
   def achieve
-    if @todo.achieve == false
-      @todo.achieve = true
-    else
-      @todo.achieve = false
-    end
+    @todo.achieve = @todo.achieve == false
     @todo.save
     redirect_to action: :index
   end
