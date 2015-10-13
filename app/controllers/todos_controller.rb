@@ -3,7 +3,7 @@ class TodosController < ApplicationController
 
   def index
     @task = Task.find(params[:task_id])
-    @todos = Todo.rank(:row_order).where(task_id: params[:task_id], user_id: current_user.id)
+    @todos = @task.todos.rank(:row_order)
     todo_achieves = []
     @todo_achieved = false
     @todo_achieved = Todo.todo_achieve_judge(@task,@todos,todo_achieves,@todo_achieved)
@@ -41,9 +41,9 @@ class TodosController < ApplicationController
   def create
     @target  = Target.find(params[:target_id])
     @task  = Task.find(params[:task_id])
-    @todo = Todo.create(name: todo_params[:name], text: todo_params[:text], user_id: current_user.id)
-    @todo.task_id = @task.id
+    @todo = @task.todos.new(todo_params)
     @todo.target_id = @target.id
+    @todo.user_id = current_user.id
     @target.achieve = false
     @task.achieve  = false
     @target.save

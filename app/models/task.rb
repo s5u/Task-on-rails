@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
   include RankedModel
-  ranks :row_order
+  ranks :row_order, with_same: :target_id
 
   #association
   belongs_to :target

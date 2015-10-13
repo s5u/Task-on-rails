@@ -1,6 +1,6 @@
 class Todo < ActiveRecord::Base
   include RankedModel
-  ranks :row_order
+  ranks :row_order, with_same: :task_id
 
   #association
   belongs_to :task

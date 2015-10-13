@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   def index
     @target = Target.find(params[:target_id])
-    @tasks = Task.rank(:row_order).where(target_id: params[:target_id], user_id: current_user.id)
+    @tasks = @target.tasks.rank(:row_order)
     tasks_achieves = []
     @tasks_achieved = false
     @tasks_achieved = Task.task_achieve_judge(@tasks, tasks_achieves, @tasks_achieved)
@@ -33,9 +33,9 @@ class TasksController < ApplicationController
   end
 
   def create
-    @target  = Target.find(params[:target_id])
-    @task = Task.create(name: task_params[:name], text: task_params[:text], user_id: current_user.id)
-    @task.target_id = @target.id
+    @target = Target.find(params[:target_id])
+    @task = @target.tasks.new(task_params)
+    @task.user_id = current_user.id
     @target.achieve = false;
     @target.save
     @task.save
