@@ -29,7 +29,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-12">
-        <div class="message">どんなに大きなTargetでも、小さなTodoの組み合わせでできているはずです。Todoを完了して、Targetを達成しましょう！</div>
+         <div class="message">
+          どんなに大きなTargetでも、小さなTodoの組み合わせでできているはずです。Todoを完了して、Targetを達成しましょう！
+         </div>
+         <% if @targets.count == 0 %>
+          <div class="first-target"><%= button_to "最初のTargetを登録する", new_target_path, method: :get %></div>
+         <% end %>
         <div>
           <%= render :partial => "target", :collection => @targets %>
         </div>
