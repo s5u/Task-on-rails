@@ -1,5 +1,5 @@
 <% if target.achieve == false %>
-  <div class="col-xs-12 col-md-12 target">
+  <div class="col-xs-12 col-md-12 target item" data-model-name="<%= Target.name.underscore %>" data-update-url="<%= "/targets/#{target.id}/sort" %>">
       <div class="target-h4 overflow-hidden"><h4><%= target.name %></h4></div>
       <div class="target-p overflow-hidden"><p><%= target.text %></p></div>
       <div class="button-position">
@@ -15,7 +15,7 @@
       </div>
   </div>
 <% else %>
-  <div class="col-xs-12 col-md-12 target-done">
+  <div class="col-xs-12 col-md-12 target-done item" data-model-name="<%= Target.name.underscore %>" data-update-url="<%= "/targets/#{target.id}/sort" %>">
       <div class= "target-h4-done overflow-hidden"><h4><%= target.name %></h4></div>
       <div class="target-p-done overflow-hidden"><p><%= target.text %></p></div>
       <div class="button-position">

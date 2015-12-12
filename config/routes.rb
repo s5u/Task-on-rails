@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   root to: "targets#index"
   resources :targets do
+        patch :sort
       resources :tasks do
          patch :sort
           resources :todos do

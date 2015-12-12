@@ -14,4 +14,4 @@ $ ->
           dataType: 'json'
           data: params
       stop: (e, ui) ->
-        ui.item.children('.task, .task-done, .todo, .todo-done').effect('highlight')
+        ui.item.children('.target, .target-done, .task, .task-done, .todo, .todo-done').effect('highlight')

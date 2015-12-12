@@ -1,7 +1,11 @@
 class Target < ActiveRecord::Base
+  include RankedModel
+  ranks :row_order, with_same: :user_id
+
   #association
   has_many :tasks, dependent: :destroy
   has_many :todos, dependent: :destroy
+  belongs_to :user
 
   def self.target_achieve_judge(targets, user_id)
     targets.each do |target|
