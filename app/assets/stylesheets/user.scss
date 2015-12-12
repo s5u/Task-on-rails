@@ -10,13 +10,13 @@
 }
 
 .logo-img {
-  float: left;
+  // float: left;
 }
 
 .logo-message {
   color: #fff;
-  float: left;
-  margin-left: 5px;
+  // float: left;
+  margin: 5px;
 }
 
 .sign-form {
@@ -123,4 +123,10 @@
   display: block;
   font-size: .7em;
   opacity: 0.5;
+}
+
+.clearfix :after {
+  content: "";
+  clear: both;
+  display: block;
 }
