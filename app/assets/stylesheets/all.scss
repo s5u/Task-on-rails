@@ -4,8 +4,9 @@ body {
   font-family: "ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN";
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.overflow {
+  // overflow: hidden;
+  overflow: scroll;
   word-break: break-all;
 }
 

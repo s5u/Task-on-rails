@@ -15,5 +15,4 @@ Rails.application.routes.draw do
   get 'contact' => 'contact#index'
   post 'contact/confirm' => 'contact#confirm'
   post 'contact/thanks' => 'contact#thanks'
-
 end
