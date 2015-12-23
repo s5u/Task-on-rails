@@ -97,11 +97,18 @@ body {
   background-color: #00bfff;
   border-radius: 5px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  color: #fff;
 }
 
 .targetname a {
   color: #fff;
 }
+
 
 .targetname a:hover{
   color: #808080;
@@ -115,11 +122,18 @@ body {
   background-color: #ffa500;
   border-radius: 5px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  color: #fff;
 }
 
 .taskname a {
   color: #fff;
 }
+
 
 .taskname a:hover{
   color: #808080;
